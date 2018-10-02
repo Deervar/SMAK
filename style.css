@@ -1,0 +1,61 @@
+*
+{
+	margin:0px;
+	padding:0px;
+}
+html
+{
+	background-color:white;
+}
+body
+{
+	width:1920px;
+	height:969px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:red;
+	background-image:url('graphics/tło.jpg');
+	background-repeat:none;
+}
+#container
+{
+	width:100%
+	height:100%;
+	float:left;
+}
+#inputy
+{
+	margin-top:440px;
+	margin-left:840px;
+	float:left;
+	width:242px;
+}
+.teksty
+{
+	margin-top:1px;
+	margin-left:2px;
+	font-family:arial;
+	font-size:25px;
+	color:white;
+	text-align:center;
+	margin-bottom:40px;
+	height:32px;
+	width:240px;
+	border:none;
+	background-color:rgb(0,0,0, 0.1);
+}
+#submit
+{
+	margin-top:40px;
+	margin-left:13px;
+	font-family:arial;
+	font-size:25px;
+	color:white;
+	text-align:center;
+	margin-bottom:40px;
+	height:30px;
+	width:215px;
+	border:none;
+	background-color:rgb(0,0,0, 0.1);
+}
