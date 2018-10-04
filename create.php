@@ -91,8 +91,10 @@
 		 ?>
 	</div>
 	<div id="inputy_char">
-	<form action="char.php">
+	<form action="char.php" method="POST">
 	<input style="margin-top:97px;" id="wroc" type="submit">
+	<input style="color:white; margin-left: -959px;margin-top:-18px" maxlength="10" type="text" name="char_name">
+	<input style="margin-left: -900px;margin-top:56px; width:115px;" type="submit">
 	</form>
 	</div>
 

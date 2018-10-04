@@ -126,7 +126,7 @@ body
 	float:left;
 	font-family: arial;
 	margin-top:35px;
-	margin-left:5px;
+	margin-left:15px;
 }
 #staty
 {

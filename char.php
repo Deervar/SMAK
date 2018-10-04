@@ -16,12 +16,13 @@
 	<input id="wroc" type="submit">
 </form>
 	</div>
-
-
 <?php
+$postac=$_POST['char_name'];
 session_start();
+
 $login = $_SESSION['login'];
 echo '<div id="powitanie"><h1>Witaj '.$login.'!</h1></div>';
+
  ?>
 
 
