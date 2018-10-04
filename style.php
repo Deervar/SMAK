@@ -121,10 +121,6 @@ body
  	width:400px;
 	height:100px;
 }
-.klasy:hover
-{
-	border:solid blue 2px;
-}
 #klasy p
 {
 	float:left;
@@ -156,9 +152,8 @@ body
 	font-size:40px;
 	font-family:arial;
 	color:white;
-	color: white;
 }
-.wybrana_klasa
+#wybrana_klasa1
 {
 	margin-top:4px;
 	width:400px;
@@ -167,7 +162,21 @@ body
 	background-color: transparent;
 	border:none;
 }
-.wybrana_klasa:hover
+#wybrana_klasa2
 {
-	border:solid blue 2px;
+	margin-top:4px;
+	width:400px;
+	height:100px;
+	color:transparent;
+	background-color: transparent;
+	border:none;
+}
+#wybrana_klasa3
+{
+	margin-top:4px;
+	width:400px;
+	height:100px;
+	color:transparent;
+	background-color: transparent;
+	border:none;
 }
