@@ -2,26 +2,43 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.php">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<title></title>
 </head>
 <body style="background-image:url('graphics/char.jpg');">
 <div id="container">
+<div id="postacie">
+	<div class="postac" id="postac1"></div>
+	<div class="postac" id="postac2"></div>
+	<div class="postac" id="postac3"></div>
+	<div class="postac" id="postac4"></div>
+	<div class="postac" id="postac5"></div>
+</div>
+
+
+
+
 <form action="create.php" method="POST">
 	<div id="inputy_char">
 	<input type="submit" name="create" value="STOWRZ POSTAC">
 </form>
-<form action="login.html">
-	<input id="wroc" type="submit">
+<form action="" method="POST">
+	<input  type="submit" name="wyloguj" id="wroc">
 </form>
 	</div>
 <?php
-$postac=$_POST['char_name'];
 session_start();
+$login = $_SESSION['loginek'];
+if ($login=='') 
+{
+	header('location:sesja.html');
+}
 
-$login = $_SESSION['login'];
-echo '<div id="powitanie"><h1>Witaj '.$login.'!</h1></div>';
+if (isset($_POST['wyloguj']))
+{
+	header('location:index.php');
+}
 
  ?>
 

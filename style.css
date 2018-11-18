@@ -1,5 +1,4 @@
-<?php header("Content-type: text/css"); ?>
-*
+﻿*
 {
 	margin:0px;
 	padding:0px;
@@ -107,7 +106,7 @@ body
 	margin-top:300px;
 	float:left;
 	height:308px;
-	width:100px;
+	width:90px;
 }
 #klasy img
 {
@@ -121,16 +120,12 @@ body
  	width:400px;
 	height:100px;
 }
-.klasy:hover
-{
-	border:solid blue 2px;
-}
 #klasy p
 {
 	float:left;
 	font-family: arial;
 	margin-top:35px;
-	margin-left:5px;
+	margin-left:15px;
 }
 #staty
 {
@@ -156,18 +151,55 @@ body
 	font-size:40px;
 	font-family:arial;
 	color:white;
-	color: white;
 }
-.wybrana_klasa
+#wybrana_klasa1
 {
 	margin-top:4px;
-	width:400px;
+	width:380px;
 	height:100px;
 	color:transparent;
 	background-color: transparent;
 	border:none;
 }
-.wybrana_klasa:hover
+#wybrana_klasa2
 {
-	border:solid blue 2px;
+	margin-top:4px;
+	width:380px;
+	height:100px;
+	color:transparent;
+	background-color: transparent;
+	border:none;
+}
+#wybrana_klasa3
+{
+	margin-top:4px;
+	width:380px;
+	height:100px;
+	color:transparent;
+	background-color: transparent;
+	border:none;
+}
+#zdjecie
+{
+	position:absolute;
+	margin-left:450px;
+	margin-top:150px;
+}
+#postacie
+{
+	margin-top:68px;
+	position:absolute;
+	margin-left:1485px;
+	width:399px;
+	height:785px;
+	background-color:red;
+	opacity: 0.5;
+}
+.postac
+{
+	margin-left:16px;
+	margin-top:20px;
+	width:370px;
+	height:150px;
+	background-color:green;
 }
