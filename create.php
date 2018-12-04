@@ -156,8 +156,19 @@
 								$i=6;
 							}
 						}
-
-						$pytanie = "INSERT INTO postacie(`nazwa_postaci`,`klasa`,`level`) VALUES ('$charname','$charclass','$charlevel')";
+						
+						if ($charclass=='Mage')
+						{
+						$pytanie = "INSERT INTO `postacie` (`nazwa_postaci`, `klasa`, `level`, `intelekt`, `sila`, `wytrzymalosc`, `zrecznosc`, `charyzma`, `wiara`) VALUES ('$charname', '$charclass', '$charlevel', '9', '1', '1', '1', '5', '5')";	
+						}
+						if ($charclass=='Warrior')
+						{
+						$pytanie = "INSERT INTO `postacie` (`nazwa_postaci`, `klasa`, `level`, `intelekt`, `sila`, `wytrzymalosc`, `zrecznosc`, `charyzma`, `wiara`) VALUES ('$charname', '$charclass', '$charlevel', '1', '9', '6', '4', '1', '1')";	
+						}
+						if ($charclass=='Hunter')
+						{
+						$pytanie = "INSERT INTO `postacie` (`nazwa_postaci`, `klasa`, `level`, `intelekt`, `sila`, `wytrzymalosc`, `zrecznosc`, `charyzma`, `wiara`) VALUES ('$charname', '$charclass', '$charlevel', '3', '3', '3', '8', '3', '2')";	
+						}
 						$wysylanie = mysqli_query($polaczenie,$pytanie)or die('<p style="margin-left:650px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;"podana nazwa jest już zajęta!</p>');
 
 					

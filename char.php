@@ -109,10 +109,12 @@
 				}
 
 				echo "<div style='margin-top:$wysokosc[0]px;border:solid red 4px;text-align:center;background-color:black;width:56px;height:56px;color:red;position:absolute;font-size:80px;font-family:arial;margin-left:1420px;'><form method='POST' action=''><input type='submit' name='usun' style='margin-left:-31px;margin-top:-3px;width:62px;height:62px;border:none;
-	background-color:rgb(0,0,0,0);position:absolute;font-size:0px;' value='$czempion'></form><p style='color:red;font-size:70px;margin-top:-17px;'>x</p>";
+	background-color:rgba(0,0,0,0);position:absolute;font-size:0px;' value='$czempion'></form><p style='color:red;font-size:70px;margin-top:-17px;'>x</p>";
 				echo "</div>";
 
-					echo "<div style='width:66px;height:98px;border:solid #0ace00 4px;margin-left:900px;margin-top:800px;position:absolute;background-color:black;'><img src='graphics/strzałka.png'>";
+					echo "<form method='POST' action=''><div style='width:66px;height:98px;border:solid #0ace00 4px;margin-left:900px;margin-top:800px;position:absolute;background-color:black;'><img src='graphics/strzałka.png'>
+					<input type='submit' name='wejdz' style='margin-left:-4px;margin-top:-107px;width:74px;height:106px;border:none;
+	background-color:rgba(1,1,1,0.1);position:absolute;font-size:0px;' value='$czempion'></form>";
 
 
 
@@ -159,6 +161,10 @@
 		if (isset($_POST['wyloguj']))
 		{
 			header('location:index.php');
+		}
+		if (isset($_POST['wejdz'])) 
+		{
+			header("location:swiat.php")
 		}
 		mysqli_close($polaczenie);
 	?>
