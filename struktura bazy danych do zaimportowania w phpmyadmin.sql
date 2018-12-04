@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Czas generowania: 04 Gru 2018, 18:02
+-- Czas generowania: 04 Gru 2018, 18:42
 -- Wersja serwera: 10.1.35-MariaDB
 -- Wersja PHP: 7.2.9
 
@@ -49,7 +49,13 @@ CREATE TABLE `konta` (
 CREATE TABLE `postacie` (
   `nazwa_postaci` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `klasa` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `level` text COLLATE utf8mb4_polish_ci NOT NULL
+  `level` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `intelekt` int(11) NOT NULL,
+  `sila` int(11) NOT NULL,
+  `wytrzymalosc` int(11) NOT NULL,
+  `zrecznosc` int(11) NOT NULL,
+  `charyzma` int(11) NOT NULL,
+  `wiara` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
