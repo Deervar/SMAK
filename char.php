@@ -86,13 +86,14 @@
 		echo "</div>";
 		if (isset($_POST['czempion'])) 
 			{
+				$_SESSION['numerek']=$_POST['czempion'];
 				$czempion = $_POST['czempion'];
 				if ($czempion==1) 
 				{
 					$wysokosc[0] =120;
 				}
 				if ($czempion==2) 
-				{
+				{	
 					$wysokosc[0] =260;
 				}
 				if ($czempion==3) 
@@ -112,7 +113,7 @@
 	background-color:rgba(0,0,0,0);position:absolute;font-size:0px;' value='$czempion'></form><p style='color:red;font-size:70px;margin-top:-17px;'>x</p>";
 				echo "</div>";
 
-					echo "<form method='POST' action=''><div style='width:66px;height:98px;border:solid #0ace00 4px;margin-left:900px;margin-top:800px;position:absolute;background-color:black;'><img src='graphics/strzałka.png'>
+					echo "<form method='POST' action='swiat.php'><div style='width:66px;height:98px;border:solid #0ace00 4px;margin-left:900px;margin-top:800px;position:absolute;background-color:black;'><img src='graphics/strzałka.png'>
 					<input type='submit' name='wejdz' style='margin-left:-4px;margin-top:-107px;width:74px;height:106px;border:none;
 	background-color:rgba(1,1,1,0.1);position:absolute;font-size:0px;' value='$czempion'></form>";
 
@@ -161,10 +162,6 @@
 		if (isset($_POST['wyloguj']))
 		{
 			header('location:index.php');
-		}
-		if (isset($_POST['wejdz'])) 
-		{
-			header("location:swiat.php")
 		}
 		mysqli_close($polaczenie);
 	?>
