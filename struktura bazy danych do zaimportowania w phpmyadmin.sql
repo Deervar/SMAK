@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Czas generowania: 18 Lis 2018, 16:31
+-- Czas generowania: 04 Gru 2018, 18:02
 -- Wersja serwera: 10.1.35-MariaDB
 -- Wersja PHP: 7.2.9
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `konta` (
   `login` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `password` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `email` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL,
   `liczba_postaci` int(11) NOT NULL,
   `nazwa_postaci1` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `nazwa_postaci2` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
@@ -38,13 +39,6 @@ CREATE TABLE `konta` (
   `nazwa_postaci4` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `nazwa_postaci5` varchar(10) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
-
---
--- Zrzut danych tabeli `konta`
---
-
-INSERT INTO `konta` (`login`, `password`, `liczba_postaci`, `nazwa_postaci1`, `nazwa_postaci2`, `nazwa_postaci3`, `nazwa_postaci4`, `nazwa_postaci5`) VALUES
-('Deervar', '12345', 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -66,7 +60,7 @@ CREATE TABLE `postacie` (
 -- Indeksy dla tabeli `konta`
 --
 ALTER TABLE `konta`
-  ADD PRIMARY KEY (`login`,`password`);
+  ADD PRIMARY KEY (`login`);
 
 --
 -- Indeksy dla tabeli `postacie`

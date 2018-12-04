@@ -1,4 +1,4 @@
-﻿*
+*
 {
 	margin:0px;
 	padding:0px;
@@ -47,21 +47,7 @@ body
 	height:32px;
 	width:240px;
 	border:none;
-	background-color:rgb(0,0,0, 0.1);
-}
-#submit
-{
-	margin-top:40px;
-	margin-left:13px;
-	font-family:arial;
-	font-size:25px;
-	color:white;
-	text-align:center;
-	margin-bottom:40px;
-	height:30px;
-	width:215px;
-	border:none;
-	background-color:rgb(0,0,0, 0.1);
+	background-color:rgba(0,0,0,0.1);
 }
 #powitanie
 {
@@ -74,29 +60,6 @@ body
 	font-family: arial;
 	position:absolute;
 	margin-top:-875px;
-}
-#inputy_char
-{
-	width:100px;
-	height: 100px;
-	margin-top:801px;
-	margin-left:1567px;
-}
-#inputy_char input
-{
-	float:left;
-	font-family:arial;
-	font-size:25px;
-	color:transparent;
-	text-align:center;
-	height:32px;
-	width:235px;
-	border:none;
-	background-color:rgb(0,0,0, 0.1);
-}
-#inputy_char #wroc
-{
-	margin-top:64px;
 }
 #klasy
 {
@@ -187,19 +150,65 @@ body
 }
 #postacie
 {
+
 	margin-top:68px;
 	position:absolute;
 	margin-left:1485px;
 	width:399px;
 	height:785px;
-	background-color:red;
-	opacity: 0.5;
+	background-color:black;
+	opacity: 0.1;
+	color:white;
 }
 .postac
 {
-	margin-left:16px;
-	margin-top:20px;
-	width:370px;
-	height:150px;
+	color:yellow;
+	font-family:arial;
+	font-size:200%;
+	text-align:center;
+	margin-left:14px;
+	margin-top:36px;
+	width:372px;
+	height:105px;
+}
+#postac1
+{
+	position:absolute;
+	background-color:purple;
+	margin-top:36px;
+
+}
+#postac2
+{
+	position:absolute;
+	background-color:red;
+	margin-top:173px;
+}
+#postac3
+{
+	position:absolute;
 	background-color:green;
+	margin-top:309px;
+}
+#postac4
+{
+	position:absolute;
+	background-color:pink;
+	margin-top:446px;
+}
+#postac5
+{
+	position:absolute;
+	background-color:blue;
+	margin-top:585px;
+}
+#postacie2
+{
+	margin-top:68px;
+	position:absolute;
+	margin-left:1485px;
+	width:399px;
+	height:785px;
+	color:white;
+
 }

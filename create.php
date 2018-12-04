@@ -13,38 +13,36 @@
 		<input type="submit" value=2 name="klasa" id="wybrana_klasa2">
 		<input type="submit" value=3 name="klasa" id="wybrana_klasa3">
 	</form>	
-	<?php
-	@$class=0+$_POST['klasa'];
-
-	if ($class==1) 
-		{
-			session_start();
-			echo '<div id="zdjecie"><img src="graphics/icons/mag1.jpg"></div>';
-			$_SESSION['charclass']='mage';
-		}
-	if ($class==2)
-		{
-			session_start();
-			echo '<div id="zdjecie"><img src="graphics/icons/war1.jpg"></div>';
-			$_SESSION['charclass']='warrior';
-		} 
-	if ($class==3)
-		{
-			session_start();
-			echo '<div id="zdjecie"><img src="graphics/icons/hunter1.jpg"></div>';
-			$_SESSION['charclass']='hunter';
-		} 
-	 ?>
-	<div id="klasy">
-		<div class="klasy"><img src="graphics/icons/mag.jpg"><p>Czarodziej</p></div>
-		<div class="klasy"><img src="graphics/icons/war.jpg"><p>Wojownik</p></div>
+		<div id="klasy">
+		<div class="klasy"><img src="graphics/icons/mage.jpg"><p>Czarodziej</p></div>
+		<div class="klasy"><img src="graphics/icons/warrior.jpg"><p>Wojownik</p></div>
 		<div class="klasy"><img src="graphics/icons/hunter.jpg"><p>Łowca</p></div>
 	</div>
 
 	<div id="staty">
+	<?php
+	@$class=0+$_POST['klasa'];
 
-		<?php 
+			if ($class==1) 
+				{
+					echo $_POST['klasa'];
+					echo "<div style='margin-left:-1010px;position:absolute;margin-top:-180px;' id='zdjecie'><img src='graphics/icons/mag1.jpg'></div>";
+					
+				}
+			if ($class==2)
+				{
+					echo $_POST['klasa'];
+					echo "<div style='margin-left:-1010px;position:absolute;margin-top:-180px;' id='zdjecie'><img src='graphics/icons/war1.jpg'></div>";
 
+				} 
+			if ($class==3)
+				{
+					echo $_POST['klasa'];
+					echo "<div style='margin-left:-1010px;position:absolute;margin-top:-180px;' id='zdjecie'><img src='graphics/icons/hunter1.jpg'></div>";
+
+				} 
+
+			session_start();
 			@$login = $_SESSION['loginek'];
 
 			$int=5;
@@ -57,7 +55,7 @@
 
 			if ($class==1) 
 			{
-			
+			$_SESSION['charclass']='Mage';
 			echo "<style>#wybrana_klasa1{border:solid blue 2px;}#staty{border:solid blue 2px;}</style>";
 			echo "<style>#zdjecie img{border: solid blue 2px;}</style>";
 			$int=9;
@@ -72,7 +70,8 @@
 
 			if ($class==2) 
 			{
-
+			
+			$_SESSION['charclass']='Warrior';
 			echo "<style>#wybrana_klasa2{border:solid red 2px;}#staty{border:solid red 2px;}</style>";
 			echo "<style>#zdjecie img{border: solid red 2px;}</style>";
 			$int=1;
@@ -86,7 +85,8 @@
 
 			if ($class==3) 
 			{
-
+			
+			$_SESSION['charclass']='Hunter';
 			echo "<style>#wybrana_klasa3{border:solid orange 2px;}#staty{border:solid orange 2px;}</style>";
 			echo "<style>#zdjecie img{border: solid orange 2px;}</style>";
 			$int=3;
@@ -112,9 +112,6 @@
 			if ($char<5)echo "<style>#staty #char{color:red;}</style>";
 			if ($faith<5)echo "<style>#staty #faith{color:red;}</style>";
 				
-
-
-
 			echo '<p class="statystyka">Intelekt:</p><p id="int">'.$int.' </p>';
 			echo '<p class="statystyka">Siła:</p><p id="str">'.$str.' </p>';
 			echo '<p class="statystyka">Wytrzymałość:</p><p id="end">'.$end.' </p>';
@@ -124,57 +121,134 @@
 			echo "</div>";
 
 
-		 ?>
-
-		 <div id="inputy_char">
-			<form  action=""  method="POST">
-			<input style="margin-top:97px;" id="wroc" type="submit" name="wroc">
-			<input style="color:white; margin-left: -959px;margin-top:-18px" maxlength="10" type="text" name="char_name">
-			<input style="margin-left: -900px;margin-top:56px; width:115px;" type="submit" name="stworz">
-			</form>
-			<?php
-			@session_start();
 				if (isset($_POST['wroc'])) 
 				{
 					header('location:char.php');
 				}
-				if (isset($_POST['stworz'])&&$_POST['char_name']!='')
-				{
-					require_once('connection.php');
-					$polaczenie = mysqli_connect($serwer,$user,$pass,$db) or die ('Błąd połączenia 001');
-					mysqli_set_charset($polaczenie,'utf8');
-					$charname = $_POST['char_name'];
-					$charlevel = '1';
-					$login = $_SESSION['loginek'];
-					
-					$charclass = $_SESSION['charclass'];
-					$pytanie3 = "SELECT liczba_postaci FROM konta WHERE login='$login'";
-					$wysylanie3 = mysqli_query($polaczenie,$pytanie3) or die("Nie moge wysłać zapytania1");
-					foreach ($wysylanie3 as $value) 
+				if (isset($_POST['stworz'])&&$_POST['char_name']!=''&&$_SESSION['charclass']!=1)
 					{
-						$i = $value['liczba_postaci']+1;
-					}
+
+						require_once('connection.php');
+						$polaczenie = mysqli_connect($serwer,$user,$pass,$db) or die ('Błąd połączenia 001');
+						mysqli_set_charset($polaczenie,'utf8');
+						$charname = $_POST['char_name'];
+						$charlevel = '1';
+						$login = $_SESSION['loginek'];
+						$charclass = $_SESSION['charclass'];
+
+						$pytanie5 = "SELECT nazwa_postaci1, nazwa_postaci2, nazwa_postaci3, nazwa_postaci4, nazwa_postaci5 FROM konta WHERE login='$login'";
+						$wysylanie5 = mysqli_query($polaczenie,$pytanie5) or die("Nie moge wysłać zapytania1");
+							foreach ($wysylanie5 as $value) 
+							{
+								$champion[1] = $value['nazwa_postaci1'];
+								$champion[2] = $value['nazwa_postaci2'];
+								$champion[3] = $value['nazwa_postaci3'];
+								$champion[4] = $value['nazwa_postaci4'];
+								$champion[5] = $value['nazwa_postaci5'];
+							}
+							$licznik=0;
+
+						for ($i=1; $i <=5 ; $i++) 
+						{ 
+							if($champion[$i]=="")
+							{
+								$licznik=$i;
+								$i=6;
+							}
+						}
+
+						$pytanie = "INSERT INTO postacie(`nazwa_postaci`,`klasa`,`level`) VALUES ('$charname','$charclass','$charlevel')";
+						$wysylanie = mysqli_query($polaczenie,$pytanie)or die('<p style="margin-left:650px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;"podana nazwa jest już zajęta!</p>');
+
 					
-					$pytanie = "INSERT INTO postacie(`nazwa_postaci`,`klasa`,`level`) VALUES ('$charname','$charclass','$charlevel')";
-					$charclass ='chuj';
-					$wysylanie = mysqli_query($polaczenie,$pytanie) or die("Nie moge wysłać zapytania3");
-					$pytanie2 = "UPDATE `konta` SET `nazwa_postaci$i` = '$charname' WHERE `konta`.`login` = '$login';";
-					$wysylanie2 = mysqli_query($polaczenie,$pytanie2) or die("Nie moge wysłać zapytania4");
-					if($wysylanie)
-					{
-						header('location:char.php');
-						$pytanie4 = "UPDATE `konta` SET `liczba_postaci` = '$i' WHERE `konta`.`login` = '$login'";
-						$wysylanie4 = mysqli_query($polaczenie,$pytanie4) or die("Nie moge wysłać zapytania2");
-					}
-					else
-					{
-						echo "Sory ale nie udało się dodać postaci";
-					}
-					mysqli_close($polaczenie);
+
+						if($wysylanie)
+							{
+
+							$pytanie2 = "UPDATE `konta` SET `nazwa_postaci$licznik` = '$charname' WHERE `konta`.`login` = '$login';";
+							$wysylanie2 = mysqli_query($polaczenie,$pytanie2) or die("<p style='margin-left:650px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;'>Nie masz już miejsca na kolejną postać!</p>");
+							$_POST['char_name']='';
+							header('location:char.php');
+							$pytanie4 = "UPDATE `konta` SET `liczba_postaci` = '$licznik' WHERE `konta`.`login` = '$login'";
+							$wysylanie4 = mysqli_query($polaczenie,$pytanie4) or die("Nie moge wysłać zapytania4");
+							$_SESSION['charclass']=1;
+							}						
+
+						mysqli_close($polaczenie);
+
+							
+						
 					
-				}
+					}
+					else if (isset($_POST['stworz'])&&$_SESSION['charclass']!=1) 
+							{	
+								echo '<div style="margin-left:800px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;">Podaj nazwę postaci!</div>';
+								$_SESSION['charclass']=1;
+								$_POST['char_name']='';
+							}
+							else if (isset($_POST['stworz'])&&$_POST['char_name']!=''&&$_SESSION['charclass']==1) 
+							{	
+								echo '<div style="margin-left:790px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;">Wybierz klasę postaci!</div>';
+								$_SESSION['charclass']=1;
+								$_POST['char_name']='';
+							}
+							else if(isset($_POST['stworz']))
+							{
+								echo '<div style="margin-left:690px;margin-top:720px;position:absolute;color:red;font-size:30px;font-family:verdana;">Wybierz klasę i podaj nazwę postaci!</div>';
+							}	
+
+
+
+					if ($login=='') 
+					{	
+						header('location:sesja.html');
+					}
+
+
 			  ?>
-		</div>
-</div>
+
+
+			<form  action=""  method="POST">
+			<input value=""type="submit" name="stworz" style="
+			position:absolute;
+			margin-left:-975px;
+			margin-top:856px;
+			width:120px;
+			height:33px;
+			border:none;
+			background-color:rgb(0,0,0,0.1);
+	;
+			">
+			<input type="submit" name="wroc"
+			style="
+		
+			margin-top:898px;
+			margin-left:-307px;
+			position:absolute;
+			font-family:arial;
+			font-size:25px;
+			color:transparent;
+			text-align:center;
+			height:32px;
+			width:235px;
+			border:none;
+			background-color:rgb(0,0,0,0.1);
+			">
+			<input maxlength="10" type="text" name="char_name"
+			style="
+			color:white;
+			margin-top:782px;
+			margin-left:-1031px;
+			position:absolute;
+			font-family:arial;
+			font-size:25px;
+			text-align:center;
+			height:32px;
+			width:235px;
+			border:none;
+			background-color:rgb(0,0,0,0.1);">
+			
+			</form>
+				</div>
 </body>
 </html>

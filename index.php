@@ -10,10 +10,39 @@
 <div id="container">
 <form action="" method="POST">
     <div id="inputy">
+    	<div style="position: absolute; color:white;font-family:arial;font-size:150%;text-align: center;margin-top:-35px;margin-left:90px;">
+    		Login
+    	</div>
+    	<div style="position: absolute; color:white;font-family:arial;font-size:150%;text-align: center;margin-top:40px;margin-left:70px;">
+    		Password
+    	</div>
         <input type="text" name="login" class="teksty" maxlength="10">
         <input type="password" name="password" class="teksty" maxlength="10">
-        <input type="submit" name="send" id="submit" value="">
+        <input type="submit" name="send" 
+    style="
+	margin-top:40px;
+	margin-left:13px;
+	font-family:arial;
+	font-size:25px;
+	color:white;
+	text-align:center;
+	margin-bottom:40px;
+	height:30px;
+	width:215px;
+	border:none;
+	background-color:rgb(0,0,0, 0.1);" value="">
     </div>
+    <div style=
+	"
+	position:absolute;
+	margin-left:37%;
+	font-family:arial;
+	text-align:center;
+	font-size:150%;
+	color: white;
+	margin-top:700px;
+	"
+	>Nie masz jeszcze konta? <a style="text-decoration:none" href="register.php">Zarejestruj się<a> za darmo!</div>
 </form>
 <?php
 
@@ -45,7 +74,7 @@ if (isset($_POST['send']))
 
 		else
 		{
-		echo "<div style='color:red;font-family:arial;font-size:200%;float:left;margin-top:400px;margin-left:-260px;'>Złe dane logowania!</div>";
+		echo "<div style='color:red;font-family:arial;font-size:200%;float:left;margin-top:570px;margin-left:-260px;'>Złe dane logowania!</div>";
 		}
 	mysqli_close($polaczenie);
 }
