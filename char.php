@@ -38,6 +38,7 @@
 			$champion[5] = $value['nazwa_postaci5'];
 			$_SESSION['nazwa5'] =$champion[5];
 		}
+			$_SESSION['exp']=0;
 			for ($i=1; $i < 6 ; $i++) 
 			{ 
 
